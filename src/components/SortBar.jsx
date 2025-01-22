@@ -50,14 +50,18 @@ function SortBar({ setFilters, handleSort, setCars }) {
       return 'Below KSH 5,000';
     } else if (numericPrice >= 5000 && numericPrice < 10000) {
       return 'KSH 5,000 - KSH 10,000';
-    } else {
-      return 'Above KSH 10,000';
+    } else if (numericPrice >= 10000 && numericPrice < 15000) {
+      return 'KSH 10,000 - KSH 15,000';
+    }else if (numericPrice >= 15000 && numericPrice < 20000) {
+      return 'KSH 15,000 - KSH 20,000';
+    }else {
+      return 'Above KSH 20,000';
     }
   };
 
   return (
     <div className="sort-bar">
-      <label>Make: </label>
+      <label>Make:</label>
       <select onChange={handleMakeChange}>
         <option value="">All</option>
         {makes.map((make, index) => (
@@ -65,7 +69,7 @@ function SortBar({ setFilters, handleSort, setCars }) {
         ))}
       </select>
 
-      <label>Model: </label>
+      <label>Model:</label>
       <select onChange={handleModelChange}>
         <option value="">All</option>
         {models.map((model, index) => (
@@ -73,7 +77,7 @@ function SortBar({ setFilters, handleSort, setCars }) {
         ))}
       </select>
 
-      <label>Transmission: </label>
+      <label>Transmission:</label>
       <select onChange={handleTransmissionChange}>
         <option value="">All</option>
         {transmissions.map((transmission, index) => (
@@ -81,7 +85,7 @@ function SortBar({ setFilters, handleSort, setCars }) {
         ))}
       </select>
 
-      <label>Price Range: </label>
+      <label>Price Range:</label>
       <select onChange={handlePriceRangeChange}>
         <option value="">All</option>
         {priceRange.map((range, index) => (
