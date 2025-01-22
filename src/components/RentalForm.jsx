@@ -58,6 +58,7 @@ function RentalForm({ car }) {
 
   return (
     <div className="rental-form-container">
+
       <form className="rental-form" onSubmit={handleSubmit}>
         <h3>Rental Agreement</h3>
         <label>Customer Name:
